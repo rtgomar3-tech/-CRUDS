@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="author" content="OMAR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GHREAWATI</title>
+</head>
+<body>
+    <h1>G H R E A W A T I</h1>
+    
+    <div class="inputs">
+        <input placeholder="الصنف" type="text" id="title">
+        
+        <!-- صف سعر المبيع وسعر الصرف -->
+        <div class="price">
+            <input oninput="getTotal()" type="number" id="price" placeholder="سعر المبيع الفردي ($)">
+            <input oninput="getTotal()" type="number" id="sypRate" placeholder="سعر صرف الدولار (ل.س)">
+            <small id="total"></small>
+        </div>
+
+        <!-- صف العدد وسعر جميع القطع (بجانب بعضهما) -->
+        <div class="price">
+            <input oninput="getTotal()" type="number" id="count" placeholder="العدد">
+            <input type="text" id="totalAllCount" placeholder="سعر جميع القطع ($ / ل.س)" readonly>
+        </div>
+
+        <input type="number" id="cost" placeholder="سعر التكلفة الفردي ($)">
+        <input type="text" id="size" placeholder="القياس">
+        <input type="text" id="brand" placeholder="الماركة">
+        <input type="text" id="origin" placeholder="المنشأ">
+        <input type="text" id="category" placeholder="ملاحظات / التصنيف">
+        
+        <button id="submit">إنشاء</button>
+
+        <!-- مربع البحث السريع -->
+        <div class="searchBlock">
+            <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="ابحث باسم الصنف ...">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>الصنف</th>
+                    <th>الماركة</th>
+                    <th>القياس</th>
+                    <th>العدد</th>
+                    <th>المنشأ</th>
+                    <th>التكلفة ($)</th>
+                    <th>سعر المبيع ($)</th>
+                    <th>سعر المبيع (ل.س)</th>
+                    <th>سعر جميع القطع ($)</th>
+                    <th>سعر جميع القطع (ل.س)</th>
+                    <th>ملاحظات</th>
+                    <th>تعديل</th>
+                    <th>حذف</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+            
+            <!-- صف المجاميع الكلية في نهاية الجدول -->
+            <tfoot id="tfoot" style="background-color: rgba(255, 255, 255, 0.1); font-weight: bold; border-top: 2px solid #fff;">
+                <!-- سيتم تعبئته تلقائياً بـ JavaScript -->
+            </tfoot>
+            <table>
+                <thead>
+                    <!-- رؤوس الأعمدة الـ 14 كما هي لديك -->
+                </thead>
+                <tbody id="tbody"></tbody>
+                
+                <!-- ذيل الجدول المخصص للمجموع الكلي -->
+                <tfoot id="tfoot"></tfoot>
+            </table>
+        </table>
+    </div>
+
+    <script src="omar.js"></script>
+    <script src="products-import(4).js"></script>
+
+</body>
+</html>
